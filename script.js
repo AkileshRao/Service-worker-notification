@@ -4,7 +4,11 @@ const checkPermission = () => {
     }
 
     if (!('Notification' in window)) {
-        throw new Error("No support fro notification API");
+        throw new Error("No support for notification API");
+    }
+
+    if (!('PushManager' in window)) {
+        throw new Error("No support for Push API")
     }
 }
 
